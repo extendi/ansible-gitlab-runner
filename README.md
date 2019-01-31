@@ -56,7 +56,7 @@ Variables to set s3 as a shared cache server. If set it requires variables liste
 
 `gitlab_runner_tmpfs`
 `gitlab_runner_services_tmpfs`
-Paths to mount as tmpfs volume in main container and in all services container. They are in JSON format.
+List of paths to mount as tmpfs volume in main container and in all services container.
 
 `gitlab_runner_extra_options`
 The extra options to the runner.

@@ -33,6 +33,10 @@ gitlab_runner_ssh_password: ''
 gitlab_runner_ssh_identity_file: ''
 # Runner Locked
 gitlab_runner_locked: 'false'
+# Paths to mount as tmpfs volume in main container
+gitlab_runner_tmpfs: []
+# Paths to mount as tmpfs volume in all services container
+gitlab_runner_services_tmpfs: []
 # Custom environment variables injected to build environment
 gitlab_runner_env_vars: []
 # Custom parameters for gitlab-runner register command

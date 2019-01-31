@@ -16,12 +16,12 @@
     --executor '{{ gitlab_runner_executor }}'
     --limit '{{ gitlab_runner_concurrent_specific }}'
     --locked='{{gitlab_runner_locked}}'
-    {% if gitlab_runner_tmpfs is defined %}
-    --docker-tmpfs '{{ gitlab_runner_tmpfs }}'
-    {% endif %}
-    {% if gitlab_runner_services_tmpfs is defined %}
-    --docker-services-tmpfs '{{ gitlab_runner_services_tmpfs }}'
-    {% endif %}
+    {% for tmpfs in gitlab_runner_tmpfs %}
+    --docker-tmpfs '{{ tmpfs }}'
+    {% endfor %}
+    {% for service_tmpfs in gitlab_runner_services_tmpfs %}
+    --docker-services-tmpfs '{{ service_tmpfs }}'
+    {% endfor %}
     {% for env_var in gitlab_runner_env_vars %}
     --env '{{ env_var }}'
     {% endfor %}
