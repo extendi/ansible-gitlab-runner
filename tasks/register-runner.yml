@@ -20,7 +20,7 @@
     --docker-tmpfs '{{ gitlab_runner_tmpfs }}'
     {% endif %}
     {% if gitlab_runner_services_tmpfs is defined %}
-    --docker-services_tmpfs '{{ gitlab_runner_services_tmpfs }}'
+    --docker-services-tmpfs '{{ gitlab_runner_services_tmpfs }}'
     {% endif %}
     {% for env_var in gitlab_runner_env_vars %}
     --env '{{ env_var }}'
