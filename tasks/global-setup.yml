@@ -17,3 +17,9 @@
     backrefs: yes
   notify: restart_gitlab_runner
 
+- name: Create volume directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop: "{{ gitlab_runner_directories_to_create }}"
+  when: gitlab_runner_directories_to_create is defined
